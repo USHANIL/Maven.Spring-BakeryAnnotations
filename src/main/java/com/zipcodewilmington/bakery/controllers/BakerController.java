@@ -16,19 +16,19 @@ public class BakerController {
     public BakerController(BakerService service) {
         this.service = service;
     }
-    @GetMapping("/baker")
+    @GetMapping("/bakers/")
     public ResponseEntity<Iterable<Baker>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
-    @GetMapping("/baker/{id}")
+    @GetMapping("/bakers/{id}")
     public ResponseEntity<Baker> show(@PathVariable Long id) {
         return new ResponseEntity<>(service.show(id), HttpStatus.OK);
     }
-    @PostMapping("/baker")
+    @PostMapping("/bakers/")
     public ResponseEntity<Baker> create(@RequestBody Baker baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
-    @PutMapping("/baker/{id}")
+    @PutMapping("/bakers/{id}")
     public ResponseEntity<Baker> update(Long id, @RequestBody Baker baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
