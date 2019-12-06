@@ -29,7 +29,7 @@ public class BakerController {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
     @PutMapping("/bakers/{id}")
-    public ResponseEntity<Baker> update(Long id, @RequestBody Baker baker) {
+    public ResponseEntity<Baker> update(@PathVariable Long id, @RequestBody Baker baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
     @DeleteMapping("/{id}")
