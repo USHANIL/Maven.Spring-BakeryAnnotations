@@ -16,6 +16,13 @@ public class BakerController {
     public BakerController(BakerService service) {
         this.service = service;
     }
+    @GetMapping("/department")
+    public String ping(){
+
+        System.out.println("received ping :");
+        return new String("hi There");
+    }
+
     @GetMapping("/bakers/")
     public ResponseEntity<Iterable<Baker>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);

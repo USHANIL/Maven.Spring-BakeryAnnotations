@@ -16,7 +16,7 @@ public class MuffinController {
     public MuffinController(MuffinService service) {
         this.service = service;
     }
-    @GetMapping("/muffins/")
+    @GetMapping("/muffins")
     public ResponseEntity<Iterable<Muffin>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
